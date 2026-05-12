@@ -1,11 +1,24 @@
 const App = () => {
-const t = [1, 2, 3, 4, 5]
+const object1 = {
+  name: 'Arto Hellas',
+  age: 35,
+  education: 'PhD',
+}
 
-const [first, second, ...rest] = t
+const object2 = {
+  name: 'Full Stack web application development',
+  level: 'intermediate studies',
+  size: 5,
+}
 
-console.log(first, second)  // se imprime 1 2
-console.log(rest)          // se imprime [3, 4 ,5]
-
+const object3 = {
+  name: {
+    first: 'Dan',
+    last: 'Abramov',
+  },
+  grades: [2, 3, 5, 3],
+  department: 'Stanford University',
+}
   return (
     <div>
 
