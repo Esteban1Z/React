@@ -1,27 +1,48 @@
+import { useState } from 'react'
+
+const Display = (props) => {
+  return (
+    <div>{props.counter}</div>
+  )
+}
+
+const Button = (props) => {
+  return (
+    <button onClick={props.onClick}>
+      {props.text}
+    </button>
+  )
+}
+
 const App = () => {
-const object1 = {
-  name: 'Arto Hellas',
-  age: 35,
-  education: 'PhD',
-}
+  const [counter, setCounter] = useState(0)
 
-const object2 = {
-  name: 'Full Stack web application development',
-  level: 'intermediate studies',
-  size: 5,
-}
+  console.log('rendering with counter value', counter)
 
-const object3 = {
-  name: {
-    first: 'Dan',
-    last: 'Abramov',
-  },
-  grades: [2, 3, 5, 3],
-  department: 'Stanford University',
-}
+  const increaseByOne = () => {
+
+    console.log('increasing, value before', counter)
+    setCounter(counter + 1)
+  }
+
+  const decreaseByOne = () => { 
+
+    console.log('decreasing, value before', counter)
+    setCounter(counter - 1)
+  }
+
+  const setToZero = () => {
+
+    console.log('resetting to zero, value before', counter)
+    setCounter(0)
+  }
+
   return (
     <div>
-
+      <Display counter={counter} />
+      <Button onClick={increaseByOne} text="plus" />
+      <Button onClick={setToZero} text="zero" />
+      <Button onClick={decreaseByOne} text="minus" />
     </div>
   )
 }
